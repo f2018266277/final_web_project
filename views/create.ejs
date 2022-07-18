@@ -1,0 +1,16 @@
+<%- include('includes/header'); %>
+
+    <div class="heading">
+        <h1>Create Blog</h1>
+    </div>
+    <div class="form">
+        <form action="/create" method="post">
+            <input type="text" name="title" placeholder="Blog Title" required>
+            <input type="text" name="category" placeholder="Blog Category" required>
+            <input type="url" name="image" placeholder="Image URL" required>
+            <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Description..."></textarea>
+            <input type="submit" value="Add Blog">
+        </form>
+    </div>
+    </main>
+    <%- include('includes/footer') %>

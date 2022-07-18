@@ -1,0 +1,42 @@
+<div class="heading">
+    <h1>Results</h1>
+</div>
+<div class="cards">
+    <!-- SINGLE POST -->
+    <% for(var i=0; i < searches.length; i++) {%>
+        <% if(searches[i].category.toLowerCase()==category.toLowerCase()){ %>
+            <!-- SINGLE POST -->
+            <div class="card">
+                <div class="img">
+                    <img src="<%= searches[i].image %>" alt="Berlin Image">
+                </div>
+                <div class="details">
+                    <span class="title">
+                        <%= searches[i].title %> <sub>(<%= searches[i].category %>)</sub>
+                    </span>
+                    <span class="desc">
+                        <%= searches[i].desc %>
+                    </span>
+                </div>
+                <div class="settings">
+                    <span class="date">
+                        <%= searches[i].date %>
+                    </span>
+                    <div>
+                        <span class="edit_blog">
+                            <a title="Edit Blog" href="/post/<%= searches[i]._id %>">
+                                <span class="fa fa-eye"></span>
+                            </a>
+                        </span>
+                        <span class="edit_blog">
+                            <a title="Edit Blog" href="/edit/<%= searches[i]._id %>">
+                                <span class="fa fa-edit"></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- SINGLE POST END -->
+            <% } } %>
+                <!-- SINGLE POST END -->
+</div>

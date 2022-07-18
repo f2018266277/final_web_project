@@ -1,0 +1,45 @@
+<%- include('includes/header'); %>
+
+    <div class="recent">
+        <div class="heading">
+            <h1>All Blogs</h1>
+        </div>
+        <div class="cards">
+            <% for(var i=0; i < blogs.length; i++) {%>
+                <!-- SINGLE POST -->
+                <div class="card">
+                    <div class="img">
+                        <img src="<%= blogs[i].image %>" alt="Berlin Image">
+                    </div>
+                    <div class="details">
+                        <span class="title">
+                            <%= blogs[i].title %> <sub>(<%= blogs[i].category %>)</sub>
+                        </span>
+                        <span class="desc">
+                            <%= blogs[i].desc %>
+                        </span>
+                    </div>
+                    <div class="settings">
+                        <span class="date">
+                            <%= blogs[i].date %>
+                        </span>
+                        <div>
+                            <span class="edit_blog">
+                                <a title="Edit Blog" href="/post/<%= blogs[i]._id %>">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </span>
+                            <span class="edit_blog">
+                                <a title="Edit Blog" href="/edit/<%= blogs[i]._id %>">
+                                    <span class="fa fa-edit"></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- SINGLE POST END -->
+                <% } %>
+        </div>
+    </div>
+    </main>
+    <%- include('includes/footer') %>

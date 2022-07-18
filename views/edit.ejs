@@ -1,0 +1,22 @@
+<%- include('includes/header2'); %>
+
+    <div class="heading">
+        <h1>Edit Blog</h1>
+    </div>
+    <div class="form">
+        <form action="../edit_blog" method="get">
+            <input type="hidden" name="id" value="<%= blog[0]['_id'] %>">
+            <input type="text" name="title" placeholder="Blog Title" value="<%= blog[0]['title'] %>" required>
+            <input type="text" name="category" placeholder="Blog Category" value="<%= blog[0]['category'] %>" required>
+            <input type="url" name="image" placeholder="Image URL" value="<%= blog[0]['image'] %>" required>
+            <textarea name="desc" id="desc" cols="30" rows="10"
+                placeholder="Description..."><%= blog[0]['desc'] %></textarea>
+            <input type="submit" name="edit" value="Edit Blog">
+        </form>
+        <form action="../delete_blog" method="get">
+            <input type="hidden" name="id" value="<%= blog[0]['_id'] %>">
+            <input type="submit" name="delete" value="Delete Blog">
+        </form>
+    </div>
+    </main>
+    <%- include('includes/footer') %>

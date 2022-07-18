@@ -1,0 +1,58 @@
+<%- include('includes/header'); %>
+    <div class="heading">
+        <h1>Home</h1>
+    </div>
+    <div class="intro">
+        <h1>Introduction</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptates pariatur fugiat cupiditate
+            esse amet! Minima rem optio dolorem iusto, quos fugit dolorum quae, ullam in reprehenderit culpa beatae
+            ad! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure totam sed commodi sunt in corrupti
+            obcaecati amet nam aspernatur veritatis cumque magni laudantium, nisi error possimus aliquam esse. Vel,
+            dolorem?</p>
+    </div>
+    <div class="recent">
+        <div class="heading">
+            <h1>Recent Blogs</h1>
+        </div>
+        <div class="cards">
+            <% for(var i=0; i < recent.length; i++) {%>
+                <!-- SINGLE POST -->
+                <div class="card">
+                    <div class="img">
+                        <img src="<%= recent[i].image %>" alt="Berlin Image">
+                    </div>
+                    <div class="details">
+                        <span class="title">
+                            <%= recent[i].title %> <sub>(<%= recent[i].category %>)</sub>
+                        </span>
+                        <span class="desc">
+                            <%= recent[i].desc %>
+                        </span>
+                    </div>
+                    <div class="settings">
+                        <span class="date">
+                            <%= recent[i].date %>
+                        </span>
+                        <div>
+                            <span class="edit_blog">
+                                <a title="Edit Blog" href="/post/<%= recent[i]._id %>">
+                                    <span class="fa fa-eye"></span>
+                                </a>
+                            </span>
+                            <span class="edit_blog">
+                                <a title="Edit Blog" href="/edit/<%= recent[i]._id %>">
+                                    <span class="fa fa-edit"></span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- SINGLE POST END -->
+                <% if (i==5) { break; } } %>
+        </div>
+    </div>
+    <div class="show-all">
+        <a href="/blogs">Show All</a>
+    </div>
+    </main>
+    <%- include('includes/footer') %>
